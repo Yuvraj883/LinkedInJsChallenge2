@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -94,4 +94,19 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+body{
+  background-color:black;
+}
+h1{
+  color:Red;
+  text-align:center;
+}
+#canvas{
+  background-color:white;
+  /* margin-right:20%; */
+  height:80%; 
+  width:80%;
+  /* align-items: center; */
+  
 }
