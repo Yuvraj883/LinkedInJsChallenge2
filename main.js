@@ -61,7 +61,7 @@ canvas.addEventListener("mousemove",(e)=>{
   finX= (e.clientX-rect.left)*scaleX; 
   finY= (e.clientY-rect.top)*scaleY; 
   if(draw){
-    color="black";
+    color="red";
     }
     else{
       color="white";
