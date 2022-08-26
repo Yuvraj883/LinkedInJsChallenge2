@@ -44,11 +44,11 @@ clear.addEventListener("click",()=>{
 })
 
 
-canvas.addEventListener("mousedown",(e)=>{
-initX=e.clientX; 
-initY=e.clientY; 
-console.log(initX, initY); 
-})
+// canvas.addEventListener("mousedown",(e)=>{
+// initX=e.clientX; 
+// initY=e.clientY; 
+// console.log(initX, initY); 
+// })
 const rect= canvas.getBoundingClientRect();
 
 
