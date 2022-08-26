@@ -105,8 +105,18 @@ h1{
 #canvas{
   background-color:white;
   /* margin-right:20%; */
-  height:80%; 
-  width:80%;
+  height:400px; 
+  width:100%;
+  display:block;
   /* align-items: center; */
   
+}
+.buttons{
+  display:flex; 
+  margin:auto; 
+
+}
+img{
+  display:block;
+  cursor: pointer; 
 }
