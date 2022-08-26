@@ -108,6 +108,7 @@ h1{
   height:500px; 
   width:100%;
   display:block;
+  cursor: url('./pencilIcon.png'), auto;
   /* align-items: center; */
   
 }
@@ -127,5 +128,5 @@ img{
 }
 .active-btn{
   transform: scale(1.1); 
-  transitioin: all 300ms ease; 
+  transition: all 300ms ease; 
 }
