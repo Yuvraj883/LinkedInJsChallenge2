@@ -1,5 +1,11 @@
 import './style.css'
 const canvas = document.getElementById("canvas"); 
+const eraser = document.getElementById("eraser"); 
+const pencil = document.getElementById("pencil"); 
+const clear = document.getElementById("clear"); 
+let draw = true; 
+let color; 
+
 const ctx = canvas.getContext('2d'); 
 let initX; 
 let initY; 
@@ -16,6 +22,19 @@ let finY;
 // console.log("Mouse is moving!!!")
 // })
 
+eraser.addEventListener("click",()=>{
+  draw=false; 
+})
+pencil.addEventListener("click",()=>{
+  draw=true; 
+})
+
+clear.addEventListener("click",()=>{
+  // alert("Are you sure?!");
+ ctx.clearRect(0,0,1200,600);
+})
+
+
 canvas.addEventListener("mousedown",(e)=>{
 initX=e.clientX; 
 initY=e.clientY; 
@@ -27,12 +46,17 @@ canvas.addEventListener("mousemove",(e)=>{
   initY = finY; 
   finX= e.clientX-canvas.getBoundingClientRect().left; 
   finY= e.clientY-canvas.getBoundingClientRect().top; 
-
+  if(draw){
+    color="black";
+    }
+    else{
+      color="white";
+    }
   ctx.beginPath(); 
   ctx.moveTo(initX, initY); 
   ctx.lineTo(finX,finY); 
   ctx.strokeWidth=2;
-  ctx.strokeStyle="red";
+  ctx.strokeStyle=color;
   ctx.stroke();
   ctx.closePath();
  // console.log(finX, finY);

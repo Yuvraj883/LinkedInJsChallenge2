@@ -105,7 +105,7 @@ h1{
 #canvas{
   background-color:white;
   /* margin-right:20%; */
-  height:400px; 
+  height:500px; 
   width:100%;
   display:block;
   /* align-items: center; */
@@ -113,10 +113,15 @@ h1{
 }
 .buttons{
   display:flex; 
-  margin:auto; 
+  margin:0 auto; 
+  justify-content: center;
+  
 
 }
 img{
   display:block;
   cursor: pointer; 
+}
+#clear{
+  cursor:pointer;
 }
