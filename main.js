@@ -24,14 +24,23 @@ let finY;
 
 eraser.addEventListener("click",()=>{
   draw=false; 
+  eraser.classList.add("active-btn");
+  pencil.classList.remove("active-btn");
+
 })
 pencil.addEventListener("click",()=>{
   draw=true; 
+  pencil.classList.add("active-btn");
+  eraser.classList.remove("active-btn");
+
+
 })
 
 clear.addEventListener("click",()=>{
   // alert("Are you sure?!");
  ctx.clearRect(0,0,1200,600);
+//  clear.classList.add("active-btn");
+
 })
 
 
@@ -40,12 +49,17 @@ initX=e.clientX;
 initY=e.clientY; 
 console.log(initX, initY); 
 })
+const rect= canvas.getBoundingClientRect();
+
 
 canvas.addEventListener("mousemove",(e)=>{
   initX= finX; 
   initY = finY; 
-  finX= e.clientX-canvas.getBoundingClientRect().left; 
-  finY= e.clientY-canvas.getBoundingClientRect().top; 
+  let scaleX = canvas.width/rect.width; 
+  let scaleY = canvas.height/rect.height; 
+
+  finX= (e.clientX-rect.left)*scaleX; 
+  finY= (e.clientY-rect.top)*scaleY; 
   if(draw){
     color="black";
     }

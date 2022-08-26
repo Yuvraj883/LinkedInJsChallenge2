@@ -125,3 +125,7 @@ img{
 #clear{
   cursor:pointer;
 }
+.active-btn{
+  transform: scale(1.1); 
+  transitioin: all 300ms ease; 
+}
