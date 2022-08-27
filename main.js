@@ -29,14 +29,14 @@ eraser.addEventListener("click",()=>{
   eraser.classList.add("active-btn");
   pencil.classList.remove("active-btn");
 
-})
+});
+
 pencil.addEventListener("click",()=>{
   draw=true; 
   pencil.classList.add("active-btn");
   eraser.classList.remove("active-btn");
 
-
-})
+});
 
 clear.addEventListener("click",()=>{
  let ans=  confirm("Are you sure?!");
@@ -44,7 +44,7 @@ clear.addEventListener("click",()=>{
  ctx.clearRect(0,0,canvas.width,canvas.height);
 //  clear.classList.add("active-btn");
 
-})
+});
 
 
 // canvas.addEventListener("mousedown",(e)=>{
