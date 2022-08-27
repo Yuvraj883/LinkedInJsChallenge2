@@ -5,6 +5,8 @@ const pencil = document.getElementById("pencil");
 const clear = document.getElementById("clear"); 
 let draw = true; 
 let color; 
+let flag = false; 
+let downFlag = false; 
 
 const ctx = canvas.getContext('2d'); 
 let initX; 
@@ -37,8 +39,9 @@ pencil.addEventListener("click",()=>{
 })
 
 clear.addEventListener("click",()=>{
-  // alert("Are you sure?!");
- ctx.clearRect(0,0,1200,600);
+ let ans=  confirm("Are you sure?!");
+  if(ans)
+ ctx.clearRect(0,0,canvas.width,canvas.height);
 //  clear.classList.add("active-btn");
 
 })
@@ -60,12 +63,14 @@ canvas.addEventListener("mousemove",(e)=>{
 
   finX= (e.clientX-rect.left)*scaleX; 
   finY= (e.clientY-rect.top)*scaleY; 
+
   if(draw){
     color="red";
     }
     else{
       color="white";
     }
+    if(flag){
   ctx.beginPath(); 
   ctx.moveTo(initX, initY); 
   ctx.lineTo(finX,finY); 
@@ -74,6 +79,31 @@ canvas.addEventListener("mousemove",(e)=>{
   ctx.stroke();
   ctx.closePath();
  // console.log(finX, finY);
+  }
 
+})
+canvas.addEventListener("mousedown", (e)=>{
+  initX = finX; 
+  initY = finY; 
+  let scaleX = canvas.width/rect.width; 
+  let scaleY = canvas.height/rect.height; 
 
+  finX= (e.clientX-rect.left)*scaleX; 
+  finY = (e.clientY-rect.top)*scaleY; 
+  downFlag= true
+  flag=true;
+  if(downFlag){
+    ctx.beginPath();
+    ctx.fillStyle=color; 
+    ctx.fillRect = (finX, finY, 2,2); 
+    ctx.closePath();
+    downFlag = false; 
+  }
+  
+});
+canvas.addEventListener("mouseup",(e)=>{
+  flag = false; 
+}); 
+canvas.addEventListener("mouseout",(e)=>{
+  flag = false; 
 })
